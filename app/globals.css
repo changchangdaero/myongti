@@ -1,0 +1,39 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  --background: 255 255 255;
+  --foreground: 0 0 0;
+  background: rgb(var(--background));
+  color: rgb(var(--foreground));
+}
+
+body {
+  min-width: 320px;
+  -webkit-font-smoothing: antialiased;
+  word-break: keep-all;
+}
+
+html.dark,
+html.dark body {
+  --background: 0 0 0;
+  --foreground: 255 255 255;
+  color-scheme: dark;
+}
+
+* { border-color: rgb(var(--foreground) / 0.16); }
+::selection { background: rgb(var(--foreground)); color: rgb(var(--background)); }
+button, a { outline-offset: 3px; }
+button:focus-visible, a:focus-visible, textarea:focus-visible { outline: 2px solid rgb(var(--foreground)); }
+
+/* 점수·날짜 등 숫자는 본문과 다른 고정폭 서체로 */
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+.stripe {
+  background-image: repeating-linear-gradient(135deg, transparent 0, transparent 5px, rgb(var(--foreground) / 0.14) 5px, rgb(var(--foreground) / 0.14) 6px);
+}
